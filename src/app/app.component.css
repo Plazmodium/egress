@@ -1,5 +1,5 @@
 .typewriter {
-  animation: typing 5s steps(100, end), blink-caret 0.75s step-end infinite;
+  animation: typing 5s steps(100, end), step-end infinite;
 }
 
 /* The typing effect */
@@ -8,7 +8,7 @@
     width: 0;
   }
   to {
-    width: 50%;
+    width: 100%;
   }
 }
 
