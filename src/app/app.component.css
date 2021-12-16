@@ -22,3 +22,18 @@
     border-color: orange;
   }
 }
+
+.terminal-in {
+  animation: fade-in 50000s;
+  animation-fill-mode: forwards;
+  overflow-y: hidden;
+}
+@keyframes fade-in {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+    visibility: visible;
+  }
+}
