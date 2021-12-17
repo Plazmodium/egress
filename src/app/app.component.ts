@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NetworkCallService } from './core/services/network-call.service';
+import { IRLLaunches } from './core/models/rocket-launch-live/launches.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Welcome to Egress';
+  data$: Observable<IRLLaunches>;
 
-  constructor() {}
+  constructor(private networkCall: NetworkCallService) {
+    this.data$ = this.networkCall.get<IRLLaunches>(
+      'https://fdo.rocketlaunch.live/json/launches/next/5'
+    );
+  }
 }
