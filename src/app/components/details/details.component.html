@@ -1,24 +1,68 @@
-<div class="flex flex-row items-center">
+<div *ngFor="let result of data?.result" class="flex flex-col">
+<!--     <hr class="text-green-500"/> -->
+  <div
+    class="
+      flex flex-row
+      items-center
+      overflow-hidden
+      whitespace-nowrap
+      tracking-normal
+      typewriter
+    "
+  >
     <app-chevron-right-svg [colour]="'text-indigo-500'"></app-chevron-right-svg>
-    <div
-      class="
-        flex flex-row
-        items-center
-        overflow-hidden
-        whitespace-nowrap
-        tracking-normal
-        typewriter
-      "
-    >
-      <img
-        src="../assets/nasa-bw-logo-2.png"
-        width="35px"
-        height="35px"
-        class="mx-2"
-      />
-      <span class="text-white font-mono text-sm mr-2"> -> </span>
-      <p class="text-white font-mono text-sm">
-        At vero eos et accusamus et iusto odio dignissimos du
-      </p>
-    </div>
+    <img
+      src="../assets/nasa-bw-logo-2.png"
+      width="55px"
+      height="55px"
+      class="mx-2"
+    />
   </div>
+
+  <app-terminal-line-text
+    *ngFor="let mission of result.missions"
+    [text]="mission.name"
+    [iconSpacing]="'ml-2'"
+    [iconColour]="'text-yellow-400'"
+  ></app-terminal-line-text>
+
+  <app-terminal-line-text
+    [text]="result.vehicle.name"
+    [iconSpacing]="'ml-4'"
+    [iconColour]="'text-blue-500'"
+  ></app-terminal-line-text>
+
+  <app-terminal-line-text
+    [text]="result.launch_description"
+    [iconSpacing]="'ml-6'"
+    [iconColour]="'text-red-500'"
+  ></app-terminal-line-text>
+
+  <app-terminal-line-text
+    [text]="result.pad.name"
+    [iconSpacing]="'ml-8'"
+    [iconColour]="'text-indigo-500'"
+  ></app-terminal-line-text>
+  <app-terminal-line-text
+    [text]="
+      result.pad.location.name +
+      ', ' +
+      result.pad.location.statename +
+      ', ' +
+      result.pad.location.country
+    "
+    [iconSpacing]="'ml-8'"
+    [iconColour]="'text-indigo-500'"
+  ></app-terminal-line-text>
+
+  <app-terminal-line-text
+    [text]="result.weather_summary"
+    [iconSpacing]="'ml-12'"
+    [iconColour]="'text-green-500'"
+  ></app-terminal-line-text>
+  <app-terminal-line-text
+  [text]="'Temp: ' + fahrenheitToCelsius(result.weather_temp)+'°C' + ' | Wind: ' + milesHourToKilometresHour(result.weather_wind_mph) + 'kph'"
+  [iconSpacing]="'ml-12'"
+  [iconColour]="'text-green-500'"
+></app-terminal-line-text>
+</div>

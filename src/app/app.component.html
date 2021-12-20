@@ -6,7 +6,7 @@
 </pre
   >
 </div>
-<app-details></app-details>
+<app-details [data]="data$ | async"></app-details>
 
 
 <!-- <button
@@ -14,9 +14,3 @@
 >
   Click Me!
 </button> -->
-
-
-
-<!-- <div *ngIf="data$ | async as launches" class="text-white">
-  {{ launches | json }}
-</div> -->
