@@ -6,51 +6,17 @@
 </pre
   >
 </div>
-<!-- border-r-2 border-solid border-orange-500 -->
+<app-details></app-details>
 
-<div class="flex flex-row items-center">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="h-5 w-5 text-indigo-500"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-  >
-    <path
-      fill-rule="evenodd"
-      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-      clip-rule="evenodd"
-    />
-  </svg>
-  <div
-    class="
-      flex flex-row
-      items-center
-      overflow-hidden
-      whitespace-nowrap
-      tracking-normal
-      typewriter
-    "
-  >
-    <!--     <span class="text-white font-mono text-sm mx-2"> > </span> -->
-    <img
-      src="../assets/nasa-bw-logo-2.png"
-      width="35px"
-      height="35px"
-      class="mx-2"
-    />
-    <span class="text-white font-mono text-sm mr-2"> -> </span>
-    <p class="text-white font-mono text-sm">
-      At vero eos et accusamus et iusto odio dignissimos du
-    </p>
-  </div>
-</div>
 
-<button
+<!-- <button
   class="py-2 px-16 m-2 bg-blue-500 hover:bg-blue-300 rounded-md text-white"
 >
   Click Me!
-</button>
+</button> -->
 
-<div *ngIf="data$ | async as launches" class="text-white">
+
+
+<!-- <div *ngIf="data$ | async as launches" class="text-white">
   {{ launches | json }}
-</div>
+</div> -->
