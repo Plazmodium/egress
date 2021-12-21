@@ -13,5 +13,4 @@ export class TerminalLineTextComponent {
   public iconSpacing?: string;
   @Input()
   public iconColour?: string;
-
 }

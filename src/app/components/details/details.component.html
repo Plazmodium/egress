@@ -1,5 +1,4 @@
 <div *ngFor="let result of data?.result" class="flex flex-col">
-<!--     <hr class="text-green-500"/> -->
   <div
     class="
       flex flex-row
@@ -56,13 +55,21 @@
   ></app-terminal-line-text>
 
   <app-terminal-line-text
-    [text]="result.weather_summary"
+    [text]="checkWeatherCondition(result.weather_condition)"
+    [iconSpacing]="'ml-12'"
+    [iconColour]="'text-green-500'"
+  ></app-terminal-line-text>
+
+  <app-terminal-line-text
+    [text]="fahrenheitToCelsius(result.weather_temp)"
     [iconSpacing]="'ml-12'"
     [iconColour]="'text-green-500'"
   ></app-terminal-line-text>
   <app-terminal-line-text
-  [text]="'Temp: ' + fahrenheitToCelsius(result.weather_temp)+'°C' + ' | Wind: ' + milesHourToKilometresHour(result.weather_wind_mph) + 'kph'"
+  [text]="milesHourToKilometresHour(result.weather_wind_mph)"
   [iconSpacing]="'ml-12'"
   [iconColour]="'text-green-500'"
 ></app-terminal-line-text>
+
+  <hr class="text-green-500 m-6" />
 </div>

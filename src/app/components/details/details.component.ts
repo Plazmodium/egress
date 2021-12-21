@@ -18,17 +18,28 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public fahrenheitToCelsius(fahrenheit: number | undefined): string | undefined {
-    console.log(fahrenheit);
-    if (fahrenheit === undefined) { return "No Data"; }
+  public fahrenheitToCelsius(fahrenheit: number | null | undefined): string {
+    if (fahrenheit === null || fahrenheit === undefined) { return "No Data"; }
     const celsius = (fahrenheit - 32) * 5 / 9;
-    return celsius.toPrecision(4).toString();
+    return this.composeTempMessage(fahrenheit, celsius);
   }
 
-  public milesHourToKilometresHour(mph: number | undefined): string | undefined {
+  public milesHourToKilometresHour(mph: number | null | undefined): string {
     console.log(mph);
-    if (mph === undefined) { return "No Data"; }
+    if (mph === undefined || mph === null) { return "No Data"; }
     const kph = mph * 1.60934;
-    return kph.toPrecision(4).toString();
+    return this.composeWindMessage(mph, kph);
+  }
+
+  public checkWeatherCondition(condition: string | null): string{
+    return condition === null ? 'No Data' : condition;
+  }
+
+  private composeTempMessage(fahrenheit: number, celsius: number): string {
+    return `Temp: ${fahrenheit}°F | ${celsius.toPrecision(4)}°C`;
+  }
+
+  private composeWindMessage(mph: number, kph: number): string{
+    return `Wind: ${mph}mph | ${kph.toPrecision(4)}kph`;
   }
 }
