@@ -1,17 +1,13 @@
 <div
-class="
-  flex flex-row
-  items-center
-  overflow-hidden
-  whitespace-nowrap
-  tracking-normal
-"
+  class="
+    flex flex-row
+    items-center
+    overflow-hidden
+    whitespace-nowrap
+    tracking-normal
+  "
 >
-<app-chevron-right-svg [colour]="'text-indigo-500'"></app-chevron-right-svg>
-<img
-  src="{{imageUrl}}"
-  width="55px"
-  height="55px"
-  class="m-3"
-/>
+  <app-chevron-right-svg [colour]="'text-indigo-500'"></app-chevron-right-svg>
+  <img src="{{ imageUrl }}" width="55px" height="55px" class="m-3" />
+  <div class="text-[#ae81ff] font-mono font-extralight">{{ provider?.name }}</div>
 </div>
