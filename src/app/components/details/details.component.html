@@ -1,22 +1,5 @@
 <div *ngFor="let result of data?.result" class="flex flex-col">
-  <div
-    class="
-      flex flex-row
-      items-center
-      overflow-hidden
-      whitespace-nowrap
-      tracking-normal
-      typewriter
-    "
-  >
-    <app-chevron-right-svg [colour]="'text-indigo-500'"></app-chevron-right-svg>
-    <img
-      src="../assets/nasa-bw-logo-2.png"
-      width="55px"
-      height="55px"
-      class="mx-2"
-    />
-  </div>
+  <app-terminal-line-image [provider]="result.provider"></app-terminal-line-image>
 
   <app-terminal-line-text
     *ngFor="let mission of result.missions"
@@ -36,6 +19,7 @@
     [iconSpacing]="'ml-6'"
     [iconColour]="'text-red-500'"
   ></app-terminal-line-text>
+  <i class="wi wi-day-sunny"></i>
 
   <app-terminal-line-text
     [text]="result.pad.name"

@@ -2,6 +2,16 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+  font-family: 'AlienLeague';
+  src: url(assets/fonts/AlienLeagueIiGradient-XOMa.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Andromeda';
+  src: url(assets/fonts/Andromeda-eR2n.ttf) format("truetype");
+}
+
 body {
   background-color: black;
   width: 100%;

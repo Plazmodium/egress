@@ -1,1 +1,14 @@
+.text{
+    font-family: 'AlienLeague';
+    color: rgba(16, 185, 129);
+    font-size: 10rem;
 
+    white-space: nowrap;
+    overflow: hidden;
+    width: 30em;
+    animation: linearwipe 10s steps(40, end); 
+}
+  
+  @keyframes linearwipe{ 
+    from { width: 0; } 
+  }  

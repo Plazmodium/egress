@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Welcome to Egress';
+  title = 'Welcome to Ingress';
   data$: Observable<IRLLaunches>;
 
   constructor(private networkCall: NetworkCallService) {
