@@ -17,8 +17,14 @@ export class TerminalLineImageComponent implements OnInit {
 
   ngOnInit(): void {
     switch (this.provider?.id) {
+      case 1:
+        this.imageUrl = '../assets/x.png';
+        break;
       case 4:
         this.imageUrl = '../assets/ariane.png';
+        break;
+      case 18:
+        this.imageUrl = '../assets/isro.png';
         break;
       case 135:
         this.imageUrl = '../assets/mitsubishi.png';

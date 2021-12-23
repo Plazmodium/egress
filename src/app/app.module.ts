@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 
 import { CORE_SERVICES } from './core/services';
 import {COMPONENTS } from './components';
+import { SHARED } from './shared';
 @NgModule({
-  declarations: [AppComponent, COMPONENTS],
+  declarations: [AppComponent, COMPONENTS, SHARED],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [CORE_SERVICES],
   bootstrap: [AppComponent],

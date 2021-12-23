@@ -25,7 +25,6 @@ export class DetailsComponent implements OnInit {
   }
 
   public milesHourToKilometresHour(mph: number | null | undefined): string {
-    console.log(mph);
     if (mph === undefined || mph === null) { return "No Data"; }
     const kph = mph * 1.60934;
     return this.composeWindMessage(mph, kph);

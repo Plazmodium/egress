@@ -1,18 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ModalService } from 'src/app/core/services/modal.service';
+import { InfoEventComponent } from '../../shared/modals/info-event/info-event.component';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
+  constructor(
+    private modalService: ModalService,
+    private viewContainerRef: ViewContainerRef
+  ) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public onInfo() {
-    window.alert('info info')
+    this.modalService.create(
+      InfoEventComponent,
+      this.viewContainerRef,
+      'Info Title',
+      'Info Message'
+    );
   }
 }
