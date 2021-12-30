@@ -1,59 +1,71 @@
-<div *ngFor="let result of data?.result" class="flex flex-col">
-  <app-terminal-line-image [provider]="result.provider"></app-terminal-line-image>
+<div *ngIf="data; else loading">
+  <div *ngFor="let result of data?.result" class="flex flex-col">
+    <app-terminal-line-image
+      [provider]="result.provider"
+    ></app-terminal-line-image>
 
-  <app-terminal-line-text
-    *ngFor="let mission of result.missions"
-    [text]="mission.name"
-    [iconSpacing]="'ml-2'"
-    [iconColour]="'text-yellow-400'"
-  ></app-terminal-line-text>
+    <app-terminal-line-text
+      *ngFor="let mission of result.missions"
+      [text]="mission.name"
+      [iconSpacing]="'ml-2'"
+      [iconColour]="'text-yellow-400'"
+    ></app-terminal-line-text>
 
-  <app-terminal-line-text
-    [text]="result.vehicle.name"
-    [iconSpacing]="'ml-4'"
-    [iconColour]="'text-blue-500'"
-  ></app-terminal-line-text>
+    <app-terminal-line-text
+      [text]="result.vehicle.name"
+      [iconSpacing]="'ml-4'"
+      [iconColour]="'text-blue-500'"
+    ></app-terminal-line-text>
 
-  <app-terminal-line-text
-    [text]="result.launch_description"
-    [iconSpacing]="'ml-6'"
-    [iconColour]="'text-red-500'"
-  ></app-terminal-line-text>
-  <i class="wi wi-day-sunny"></i>
+    <app-terminal-line-text
+      [text]="result.launch_description"
+      [iconSpacing]="'ml-6'"
+      [iconColour]="'text-red-500'"
+    ></app-terminal-line-text>
+    <i class="wi wi-day-sunny"></i>
 
-  <app-terminal-line-text
-    [text]="result.pad.name"
-    [iconSpacing]="'ml-8'"
-    [iconColour]="'text-indigo-500'"
-  ></app-terminal-line-text>
-  <app-terminal-line-text
-    [text]="
-      result.pad.location.name +
-      ', ' +
-      result.pad.location.statename +
-      ', ' +
-      result.pad.location.country
-    "
-    [iconSpacing]="'ml-8'"
-    [iconColour]="'text-indigo-500'"
-  ></app-terminal-line-text>
+    <app-terminal-line-text
+      [text]="result.pad.name"
+      [iconSpacing]="'ml-8'"
+      [iconColour]="'text-indigo-500'"
+    ></app-terminal-line-text>
+    <app-terminal-line-text
+      [text]="
+        result.pad.location.name +
+        ', ' +
+        result.pad.location.statename +
+        ', ' +
+        result.pad.location.country
+      "
+      [iconSpacing]="'ml-8'"
+      [iconColour]="'text-indigo-500'"
+    ></app-terminal-line-text>
 
-  <app-terminal-line-text
-    [text]="checkWeatherCondition(result.weather_condition)"
-    [iconSpacing]="'ml-12'"
-    [iconColour]="'text-green-500'"
-  ></app-terminal-line-text>
+    <app-terminal-line-text
+      [text]="checkWeatherCondition(result.weather_condition)"
+      [iconSpacing]="'ml-12'"
+      [iconColour]="'text-green-500'"
+    ></app-terminal-line-text>
 
-  <app-terminal-line-text
-    [text]="fahrenheitToCelsius(result.weather_temp)"
-    [iconSpacing]="'ml-12'"
-    [iconColour]="'text-green-500'"
-  ></app-terminal-line-text>
-  <app-terminal-line-text
-  [text]="milesHourToKilometresHour(result.weather_wind_mph)"
-  [iconSpacing]="'ml-12'"
-  [iconColour]="'text-green-500'"
-></app-terminal-line-text>
+    <app-terminal-line-text
+      [text]="fahrenheitToCelsius(result.weather_temp)"
+      [iconSpacing]="'ml-12'"
+      [iconColour]="'text-green-500'"
+    ></app-terminal-line-text>
+    <app-terminal-line-text
+      [text]="milesHourToKilometresHour(result.weather_wind_mph)"
+      [iconSpacing]="'ml-12'"
+      [iconColour]="'text-green-500'"
+    ></app-terminal-line-text>
 
-  <hr class="text-green-500 m-6" />
+    <hr class="text-green-500 m-6" />
+  </div>
 </div>
+
+<ng-template #loading>
+  <div class="flex w-full justify-center ">
+    <div class="loader">
+      <img src="../../../assets/satellite.png" width="50px" height="50px" alt="ingress icon">
+    </div>
+  </div>
+</ng-template>

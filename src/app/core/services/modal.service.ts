@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, ComponentRef, Injectable, Type, ViewChild, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class ModalService {
     componentRef.instance.event = () => this.destroy(vcRef);
   }
 
-  public destroy(vcRef: ViewContainerRef) {
+  private destroy(vcRef: ViewContainerRef) {
     vcRef.clear();
   }
 }

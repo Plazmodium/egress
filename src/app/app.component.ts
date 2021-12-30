@@ -15,7 +15,7 @@ export class AppComponent {
 
   constructor(private network: NetworkCallService) {
     this.data$ = this.network.get<IRLLaunches>(
-      'https://fdo.rocketlaunch.live/json/launches/next/5'
+      'https://fdo.rocketlaunch.live/json/launches/next/5'//
     );
   }
 }
