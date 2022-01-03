@@ -1,20 +1,12 @@
-
-
+<!-- whitespace-nowrap -->
 <div
-  class="
-    flex flex-row
-    items-center
-    overflow-hidden
-    whitespace-nowrap
-    tracking-normal
-    typewriter
-  "
+  class="flex flex-row items-center overflow-hidden tracking-normal typewriter"
 >
   <app-chevron-right-svg
-    class={{iconSpacing}}
+    class="{{ iconSpacing }}"
     [colour]="iconColour"
   ></app-chevron-right-svg>
-  <p class="{{iconColour}} font-mono text-sm">
+  <p class="{{ iconColour }} font-mono text-sm">
     {{ text }}
   </p>
 </div>

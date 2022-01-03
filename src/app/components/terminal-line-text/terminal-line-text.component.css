@@ -1,5 +1,5 @@
 .typewriter {
-    animation: typing 5s steps(100, end), step-end infinite;
+    animation: typing 1.5s steps(100, end), step-end infinite;
   }
   
   /* The typing effect */
