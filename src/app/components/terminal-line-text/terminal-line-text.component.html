@@ -1,12 +1,22 @@
 <!-- whitespace-nowrap -->
 <div
-  class="flex flex-row items-center overflow-hidden tracking-normal typewriter"
+  class="flex flex-row items-center overflow-hidden tracking-normal"
 >
+
   <app-chevron-right-svg
     class="{{ iconSpacing }}"
     [colour]="iconColour"
   ></app-chevron-right-svg>
-  <p class="{{ iconColour }} font-mono text-sm">
+<!--   <p class="{{ iconColour }} font-mono text-sm">
     {{ text }}
-  </p>
-</div>
+  </p> -->
+
+  <ngx-typed-js [showCursor]="false" [strings]="[text!]">
+    <p class="typing {{ iconColour }} font-mono text-sm"></p>
+  </ngx-typed-js>
+</div> 
+
+
+
+
+

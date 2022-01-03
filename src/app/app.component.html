@@ -1,7 +1,14 @@
 <app-nav></app-nav>
-<div class="flex justify-center">
-  <div class="launches-text">LAUNCHES -------></div>
-  <div class="upnext-text">UP NEXT...</div>
+<div class="flex justify-start">
+<!--   <div class="launches-text">LAUNCHES -----~~></div>
+  <div class="upnext-text">UP NEXT...</div> -->
+
+  <ngx-typed-js [showCursor]="false" [strings]="['LAUNCHES']">
+    <p class="typing launches-text"></p>
+  </ngx-typed-js>
+  <ngx-typed-js [showCursor]="false" [strings]="['UP NEXT...']">
+    <p class="typing upnext-text"></p>
+  </ngx-typed-js>
 </div>
 <app-details [data]="data$ | async"></app-details>
 <!-- flex flex-col justify-center text-center h-20 left-0 bottom-0 w-full bg-black text-white align-middle font-mono text-sm -->

@@ -21,7 +21,7 @@ export class NavComponent implements OnInit {
       this.viewContainerRef,
       'What`s this about?',
       'It`s pretty simple. If you are interested in space, rocketry and like to be inspired by human innovation, then you have come to the right place. Stay up-to-date and never miss a launch.'
-      + ' Don`t get bogged down with too much info. Just drop in and get the gist of what`s to come next. That`s it.'
+      + ' Don`t get bogged down by too much info. Just drop in and get the gist of what`s to come next. That`s it.'
       + ' Oh, and watch this space! You never know what might land ...'
     );
   }

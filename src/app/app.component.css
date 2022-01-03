@@ -1,29 +1,30 @@
-.launches-text{
-  font-family: 'AlienLeague';
+.launches-text {
+  font-family: "AlienLeague";
   color: rgba(16, 185, 129);
   font-size: 2rem;
 }
 
-.upnext-text{
-    font-family: 'AlienLeague';
-    color: rgba(16, 185, 129);
-    font-size: 7rem;
-
-    white-space: nowrap;
-    overflow: hidden;
-    width: 30em;
-    animation: linearwipe 10s steps(40, end); 
+.upnext-text {
+  font-family: "AlienLeague";
+  color: rgba(16, 185, 129);
+  font-size: 7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  /*width: 30em;*/
+  /*animation: linearwipe 10s steps(40, end); */
 }
-  
-  @keyframes linearwipe{ 
-    from { width: 0; } 
-  } 
 
-  .footer {
-    position: sticky;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 5px;
+@keyframes linearwipe {
+  from {
+    width: 0;
   }
+}
+
+.footer {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
