@@ -20,6 +20,9 @@ export class TerminalLineImageComponent implements OnInit {
       case 1:
         this.imageUrl = '../assets/x.png';
         break;
+      case 3:
+        this.imageUrl = '../assets/ula.png';
+        break;
       case 4:
         this.imageUrl = '../assets/ariane.png';
         break;
